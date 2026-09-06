@@ -1,44 +1,45 @@
 # Andrey Ryabokon
 
-I work at IVI and build tools in Python and Go.
-My focus is service integration, testing, and predictable runtime behavior.
+I build Python and Go tools at IVI for service integration, testing, and predictable caching.
 
-I care about explicit contracts, useful diagnostics,
-and documenting the trade-offs behind an API.
+## Tools I maintain
 
-## Projects I maintain
+### [Proxy Mock](https://github.com/ivi-ru/proxy_mock) · Python
+
+Simulate HTTP dependencies and inspect requests in integration tests. Configure responses,
+capture traffic, and reuse mock snapshots through a standalone server or the bundled pytest fixtures.
+
+**Status:** maintained 2.x releases. Requires Python 3.11 or newer.
+
+[Install and usage](https://github.com/ivi-ru/proxy_mock#readme) ·
+[PyPI](https://pypi.org/project/proxy-mock/) ·
+[Report a problem](https://github.com/ivi-ru/proxy_mock/issues)
 
 ### [sanecache](https://github.com/andared/sanecache) · Go
 
-An in-memory cache with synchronous writes, byte budgets,
-TTL jitter, negative caching, and coordinated loading. No dependencies.
+Cache Go values with synchronous writes, byte budgets, and coordinated loading of missing keys.
+Use negative caching to remember missing records and TTL jitter to spread out expiration.
+No dependencies.
 
-**Working toward 1.0.0.** The public API may change before v1;
-breaking changes and migration notes are recorded in the changelog.
+**Status:** pre-1.0; the public API may change. Requires Go 1.24 or newer.
 
-[Releases](https://github.com/andared/sanecache/releases) ·
+[Quick start](https://github.com/andared/sanecache#quick-start) ·
+[API reference](https://pkg.go.dev/github.com/andared/sanecache) ·
 [Changelog](https://github.com/andared/sanecache/blob/main/CHANGELOG.md) ·
-[Contributing](https://github.com/andared/sanecache/blob/main/CONTRIBUTING.md)
+[Report a problem](https://github.com/andared/sanecache/issues)
 
-### [Proxy Mock](https://github.com/ivi-ru/proxy_mock) · Python / IVI
+## Experimental work
 
-An HTTP proxy and mock server for integration tests and local debugging,
-with request matching, traffic capture, snapshots, and pytest fixtures.
+[gomorphy](https://github.com/andared/gomorphy) is my experimental fork of a Russian morphology
+library for Go, focused on independent analyzer instances and predictable lifecycle behavior.
+See its README for differences from upstream and current limitations.
 
-**Maintaining 2.x and working toward 3.0.0.** The roadmap covers the next
-major release, compatibility changes, and the project's scope.
+## Contributions
 
-[Releases](https://github.com/ivi-ru/proxy_mock/releases) ·
-[Roadmap](https://github.com/ivi-ru/proxy_mock/blob/main/ROADMAP.md) ·
-[Changelog](https://github.com/ivi-ru/proxy_mock/blob/main/CHANGELOG.md) ·
-[Contributing](https://github.com/ivi-ru/proxy_mock/blob/main/CONTRIBUTING.md)
-
-## Elsewhere in open source
-
-I've proposed improvements to [MiniJinja's](https://github.com/mitsuhiko/minijinja)
-Go integration, including these open pull requests:
+Recent proposed improvements to MiniJinja's Go integration:
 
 - [Preserve floating-point values passed through the context](https://github.com/mitsuhiko/minijinja/pull/937).
 - [Keep `loop.changed()` state across iterations](https://github.com/mitsuhiko/minijinja/pull/936).
 
-Questions and contributions are welcome in the project issue trackers.
+For usage questions or bug reports, open an issue in the relevant project with a small example
+and the package version. Contributions are welcome; each maintained project has a contributing guide.
